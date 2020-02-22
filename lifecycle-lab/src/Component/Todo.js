@@ -3,18 +3,18 @@ import React from 'react';
 class ToDo extends React.Component{
     constructor(props){
         super(props)
-        this.state = {text: " "}
+        this.state = {text: " hello"}
     }
     handleSubmit(event){
         event.preventDefault()
     }
     componentDidMount(){
-       let input= this.state.text
+    console.log("componentWillMount()")
     }
-    
 
     handleChange(event){
-        this.setState({text:event.target.value})
+        console.log(event)
+        // this.setState({text:event.target.value})
     }
     componentWillUnmount(){
 
@@ -22,7 +22,7 @@ class ToDo extends React.Component{
  render(){
      return(
          <form onSubmit ={this.handleSubmit}>
-             <input type="text" onChange={this.handleChange}placeholder="Enter a To Do" value={this.state.text}></input>
+             <input type="text" onChange={this.handleChange}placeholder="Enter a To Do" ></input>
             <h3></h3>
 
          </form>
