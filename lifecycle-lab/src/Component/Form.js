@@ -11,7 +11,8 @@ class Form extends React.Component{
       event.preventDefault()
       this.props.addToDo(this.state.text)
       this.setState({text: ''})
-    //   debugger
+      
+  
   } 
   handleInput=(event) =>{
     this.setState({text:event.target.value})
@@ -20,8 +21,10 @@ class Form extends React.Component{
   render(){
       
       return(
+         
        <form onSubmit={this.handleSubmit}>
             <input value ={this.state.text} placeholder="to do" onChange={this.handleInput}/>
+            
         </form>
       )
 
