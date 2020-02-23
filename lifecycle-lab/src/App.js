@@ -2,22 +2,29 @@ import React from 'react';
 import './App.css';
 import ToDo from './Component/Todo';
 import {toast} from 'react-toastify';
+import Form from './Component/Form'
 import 'react-toastify/dist/ReactToastify.css';
 class App extends React.Component {
+
   state = {
-    text: ''
+    toDoList:[]
   }
-  handleInput(event) {
-    event.preventDefault()
-    this.state({text:event.target.value})
-}
+  addToDo =(toDo)=>{  this.setState({toDoList:[...this.state.toDoList, toDo]  }) }
+
+  
+  
+
 
   render() {
+    console.log(this.state)
     return (
 
       <div className="App">
-        <ToDo 
-         handleInput ={this.handleInput}/>
+        {/* <ToDo 
+         handleInput ={this.handleInput}/> */}
+         <Form
+         addToDo={this.addToDo}
+         />
         {/* <ToastBox/> */}
         life cycle lab
       
