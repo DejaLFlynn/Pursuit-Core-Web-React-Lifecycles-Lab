@@ -7,14 +7,21 @@ class App extends React.Component {
   state = {
     text: ''
   }
+  handleInput(event) {
+    event.preventDefault()
+    this.state({text:event.target.value})
+}
 
   render() {
     return (
 
       <div className="App">
-        <ToDo />
+        <ToDo 
+         handleInput ={this.handleInput}/>
         {/* <ToastBox/> */}
         life cycle lab
+      
+
     </div>
     )
   }
